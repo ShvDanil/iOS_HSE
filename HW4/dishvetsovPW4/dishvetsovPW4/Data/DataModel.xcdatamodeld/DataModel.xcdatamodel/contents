@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="21G115" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="ShortNoteEntity" representedClassName="ShortNoteEntity" syncable="YES">
+        <attribute name="text" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="ShortNoteEntity" positionX="-54" positionY="-9" width="128" height="44"/>
+    </elements>
+</model>
