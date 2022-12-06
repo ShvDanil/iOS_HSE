@@ -334,4 +334,52 @@ extension UIView {
         pinCenterX(to: superview)
         pinCenterY(to: superview)
     }
+    
+    @discardableResult
+    func pinWidth(to superview: UIView, _ mult: Double = 1) -> NSLayoutConstraint {
+        translatesAutoresizingMaskIntoConstraints = false
+        let constraint = widthAnchor.constraint(
+            equalTo: superview.widthAnchor,
+            constant: CGFloat(mult)
+        )
+        constraint.isActive = true
+        
+        return constraint
+    }
+    
+    @discardableResult
+    func pinWidth(to size: NSLayoutDimension, _ mult: Double = 1) -> NSLayoutConstraint {
+        translatesAutoresizingMaskIntoConstraints = false
+        let constraint = widthAnchor.constraint(
+            equalTo: size,
+            constant: CGFloat(mult)
+        )
+        constraint.isActive = true
+        
+        return constraint
+    }
+    
+    @discardableResult
+    func pinHeight(to superview: UIView, _ mult: Double = 1) -> NSLayoutConstraint {
+        translatesAutoresizingMaskIntoConstraints = false
+        let constraint = centerYAnchor.constraint(
+            equalTo: superview.centerYAnchor,
+            constant: CGFloat(mult)
+        )
+        constraint.isActive = true
+        
+        return constraint
+    }
+    
+    @discardableResult
+    func pinHeight(to size: NSLayoutDimension, _ mult: Double = 1) -> NSLayoutConstraint {
+        translatesAutoresizingMaskIntoConstraints = false
+        let constraint = heightAnchor.constraint(
+            equalTo: size,
+            constant: CGFloat(mult)
+        )
+        constraint.isActive = true
+        
+        return constraint
+    }
 }

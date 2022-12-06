@@ -10,7 +10,9 @@ import UIKit
 // Extension for color palette view which defines the behavior of each slider.
 extension ColorPaletteView {
     internal final class ColorSliderView: UIControl {
+        
         private let slider = UISlider()
+        
         private let colorLabel = UILabel()
         
         private(set) var value: Float
