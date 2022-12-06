@@ -9,6 +9,7 @@ import UIKit
 
 // Extension for UIColor which adds the ability to get rgb color component.
 extension UIColor {
+    
     var rgba: (red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat) {
         var red: CGFloat = 0
         var green: CGFloat = 0
@@ -18,4 +19,13 @@ extension UIColor {
         
         return (red, green, blue, alpha)
     }
+    
+    static var gradientDarkGray: UIColor {
+        UIColor(red: 239 / 255.0, green: 241 / 255.0, blue: 241 / 255.0, alpha: 1)
+    }
+    
+    static var gradientLightGray: UIColor {
+        UIColor(red: 201 / 255.0, green: 201 / 255.0, blue: 201 / 255.0, alpha: 1)
+    }
+    
 }

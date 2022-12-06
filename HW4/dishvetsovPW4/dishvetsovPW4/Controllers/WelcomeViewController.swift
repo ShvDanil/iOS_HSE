@@ -33,6 +33,9 @@ final class WelcomeViewController: UIViewController {
     // Notes components.
     private let notesViewController = NotesViewController()
     private var notesButton: UIButton = UIButton()
+    
+    // Notes components.
+    private var newsButton: UIButton = UIButton()
 
     private var value: Int = 0
     
@@ -219,7 +222,12 @@ final class WelcomeViewController: UIViewController {
             for: .touchUpInside)
         
         // Declaration and setup of news button.
-        let newsButton = makeMenuButton(title: "📰")
+        newsButton = makeMenuButton(title: "📰")
+        newsButton.addTarget(
+            self,
+            action: #selector(newsButtonPressed),
+            for: .touchUpInside
+        )
         
         // Declaration of stack view with three main buttons.
         buttonsSV = UIStackView(arrangedSubviews: [colorsButton, notesButton, newsButton])
@@ -387,6 +395,16 @@ final class WelcomeViewController: UIViewController {
         
         let navigation = UINavigationController(rootViewController: notesViewController)
         present(navigation, animated: true, completion: nil)
+    }
+    
+    /// Action which handles the event of press of news button and pushes the new contorller.
+    @objc
+    private func newsButtonPressed() {
+        let generator = UIImpactFeedbackGenerator(style: .medium)
+        generator.impactOccurred()
+        
+        let newsListController = NewsListViewController()
+        navigationController?.fadeTo(newsListController)
     }
     
     /// Enables color palette appearance and activates all necessary settings.
